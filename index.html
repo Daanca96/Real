@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
+    <!--<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>-->
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
+
+
     <!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> esta va con la de abajo--> 
     <script src="aframe.js"></script>
+
     <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
     <script src="aframe-ar.js"></script>     
      <!--<script src="https://unpkg.com/merge-images"></script>-->
+
+
+
 <script>
-    var arreglo = ['mujer.glb','corazon2.glb','torreSausesVer6.glb'];
+/*    var arreglo = ['mujer.glb','corazon2.glb','torreSausesVer6.glb'];
+
     var contador=0; 
+
     window.onload = function () {
       document
         .querySelector(".say-hi-button")
         .addEventListener("click", function () {
+
         if (contador > 2) {contador=0;}
         document.getElementById('sauses').setAttribute('gltf-model', arreglo[contador]);
-       alert (arreglo[contador]);
         contador++;
+        
         });
     };
+*/
 </script>
-
+<!--
 <style>
     .buttons {
       position: absolute;
@@ -31,25 +44,64 @@
       justify-content: center;
       align-items: center;
       z-index: 10;
+
     }
 
     .say-hi-button {
       padding: 0.25em;
       border-radius: 4px;
       border: none;
-      background: green;
+      background: blue;
       color: white;
       width: 4em;
       height: 2em;    }
   </style>
+
+-->
     <body style="margin : 0px; overflow: hidden;"  >
 
+<!--
 <div class="buttons">
   <button class="say-hi-button">Next</button>
 </div>
+-->
+<a-scene embedded arjs>
 
-        
-        <a-scene embedded arjs = 'sourceType: webcam; sourceWidth: 1280; sourceHeight: 960; displayWidth: 1280; displayHeight: 960; '>
+        <!--<a-marker preset="hiro">-->
+        <a-marker type='pattern' url='corazon.patt' preset='corazon.patt'>
+            <!--<a-sphere position="0 0 0" radius="0.6" color="#EF2D5E"></a-sphere>-->
+
+<!--<a-entity  scale=".6 .6 .6" position="0 0 0" crossOrigin="anonymous">
+    gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+
+
+            scale=".6 .6 .6" 
+            position="0 0 0" 
+
+-->
+
+            <a-entity
+            id="corazon"
+            position="0 0 -1"
+            scale="3 3 3"
+
+            gltf-model="corazon2.glb"
+            >
+            <a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>
+            </a-entity>
+        </a-marker>
+
+        <a-marker type='pattern' url='tierra.patt' preset='tierra.patt'>
+            <a-entity
+            id="tierra"
+            position="0 0 -1"
+            scale="3 3 3"
+            gltf-model="tierra.glb"
+            >
+            <a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>
+            </a-entity>
+        </a-marker>
+
         <a-marker type='pattern' url='marcador3.patt' preset='marcador3.patt'>
             <a-entity
             id="sauses"
@@ -63,5 +115,8 @@
 
         <a-entity camera></a-entity>
         </a-scene>
+
+
+
     </body>
 </html>
