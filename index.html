@@ -15,7 +15,7 @@
 
 
 <script>
-/*    var arreglo = ['mujer.glb','corazon2.glb','torreSausesVer6.glb'];
+    var arreglo = ['mujer.glb','corazon2.glb','torreSausesVer6.glb'];
 
     var contador=0; 
 
@@ -30,9 +30,8 @@
         
         });
     };
-*/
 </script>
-<!--
+
 <style>
     .buttons {
       position: absolute;
@@ -57,15 +56,15 @@
       height: 2em;    }
   </style>
 
--->
     <body style="margin : 0px; overflow: hidden;"  >
 
-<!--
+
 <div class="buttons">
   <button class="say-hi-button">Next</button>
 </div>
--->
+
 <a-scene embedded arjs>
+
 
 
         <a-marker type='pattern' url='marcador3.patt' preset='marcador3.patt'>
@@ -73,7 +72,7 @@
             id="sauses"
             position="0 0 -1"
             scale="3 3 3"
-            gltf-model="mujer.glb"
+            gltf-model="torreSausesVer6.glb"
             >
             <a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>
             </a-entity>
