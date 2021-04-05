@@ -15,7 +15,7 @@
 
 
 <script>
-    var arreglo = ['mujer.glb','corazon2.glb','torreSausesVer7.glb'];
+    var arreglo = ['adn.glb','cerebro.glb','mujer.glb','corazon2.glb','torreSausesVer7.glb'];
 
     var contador=0; 
 
@@ -24,7 +24,7 @@
         .querySelector(".say-hi-button")
         .addEventListener("click", function () {
 
-        if (contador > 2) {contador=0;}
+        if (contador > 4) {contador=0;}
         document.getElementById('sauses').setAttribute('gltf-model', arreglo[contador]);
         contador++;
         
@@ -70,9 +70,9 @@
         <a-marker type='pattern' url='marcador3.patt' preset='marcador3.patt'>
             <a-entity
             id="sauses"
-            position="0 0 -0.5"
+            position="0 0 -1"
             scale="4 4 4"
-            gltf-model="torreSausesVer7.glb"
+            gltf-model="cerebro.glb"
             >
             <!--<a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>-->
             </a-entity>
