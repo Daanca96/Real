@@ -26,6 +26,7 @@
 
         if (contador > 4) {contador=0;}
         document.getElementById('sauses').setAttribute('gltf-model', arreglo[contador]);
+        document.getElementById('adn').setAttribute('gltf-model', arreglo[contador]);
         contador++;
         
         });
@@ -72,9 +73,20 @@
             id="sauses"
             position="0 0 -1"
             scale="4 4 4"
-            gltf-model="adn.glb"
+            gltf-model="cerebro.glb"
             >
             <!--<a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>-->
+            </a-entity>
+        </a-marker>
+
+        <a-marker type='pattern' url='pattern-3.patt' preset='pattern-3.patt'>
+            <a-entity
+            id="adn"
+            position="0 0 -1"
+            scale="4 4 4"
+            gltf-model="adn.glb"
+            >
+            <a-animation attribute="rotation" to="0 0 360" dur="9000" easing="linear" repeat="indefinite"></a-animation>
             </a-entity>
         </a-marker>
 
